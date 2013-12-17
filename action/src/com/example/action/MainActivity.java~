@@ -30,6 +30,10 @@ public class MainActivity extends Activity {
 	}
 
 	private void showPopupMenu(int id) {
+		String[] strArr = { "Item1", "Item2", "Item3",
+	      "Item4" };
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+		        R.id.action_settings, strArr);
 		final Activity activity = this;
 		View v = activity.findViewById(id);
 		PopupMenu popupMenu = new PopupMenu(activity, v);
