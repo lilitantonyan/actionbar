@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 	}
 
 	private void showPopupMenu() {
-		View v = this.findViewById(R.id.action_settings);
+		View v = (View)findViewById(R.id.action_settings);
 		PopupMenu popupMenu = new PopupMenu(this, v);
 		popupMenu.getMenuInflater().inflate(R.menu.main, popupMenu.getMenu());
 
