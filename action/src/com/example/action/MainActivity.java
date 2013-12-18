@@ -2,13 +2,11 @@ package com.example.action;
 
 import android.os.Bundle;
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -30,7 +28,7 @@ public class MainActivity extends Activity {
 	}
 
 	private void showPopupMenu() {
-		View v = (View)findViewById(R.id.action_settings);
+		View v = (View) findViewById(R.id.action_settings);
 		PopupMenu popupMenu = new PopupMenu(this, v);
 		popupMenu.getMenuInflater().inflate(R.menu.main, popupMenu.getMenu());
 
@@ -39,14 +37,12 @@ public class MainActivity extends Activity {
 
 					@Override
 					public boolean onMenuItemClick(MenuItem item) {
-						Toast.makeText(getApplicationContext(), item.toString(),
-								Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(),
+								item.toString(), Toast.LENGTH_LONG).show();
 						return true;
 					}
 				});
-
 		popupMenu.show();
-
 	}
 
 	@Override
