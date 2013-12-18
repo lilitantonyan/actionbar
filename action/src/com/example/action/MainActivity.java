@@ -29,10 +29,9 @@ public class MainActivity extends Activity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	private void showPopupMenu(int id) {
-		final Activity activity = this;
-		View v = activity.findViewById(id);
-		PopupMenu popupMenu = new PopupMenu(activity, v);
+	private void showPopupMenu() {
+		View v = this.findViewById(R.id.action_settings);
+		PopupMenu popupMenu = new PopupMenu(this, v);
 		popupMenu.getMenuInflater().inflate(R.menu.main, popupMenu.getMenu());
 
 		popupMenu
@@ -40,7 +39,7 @@ public class MainActivity extends Activity {
 
 					@Override
 					public boolean onMenuItemClick(MenuItem item) {
-						Toast.makeText(activity, item.toString(),
+						Toast.makeText(getApplicationContext(), item.toString(),
 								Toast.LENGTH_LONG).show();
 						return true;
 					}
@@ -55,7 +54,7 @@ public class MainActivity extends Activity {
 		// Handle item selection
 		switch (item.getItemId()) {
 		case R.id.action_settings:
-			showPopupMenu(R.id.action_settings);
+			showPopupMenu();
 			return true;
 		}
 		return false;
